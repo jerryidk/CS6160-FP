@@ -27,7 +27,7 @@ class VisibilityGraph {
       bruteforce();
       
       path = new ArrayList<Point>(); 
-      solve();
+      bfs();
   }
   
   // draw everything.
