@@ -214,7 +214,7 @@ Polygon ConvexHullGiftWrap( ArrayList<Point> points ){
     // obtain left most point for current left most point
     float min_angle = PI;
     Point n = null; // next left most point from current
-    PVector a = l.to(c);  //<>// //<>//
+    PVector a = l.to(c);   //<>//
     float amag = a.mag();
     PVector b = null;
     for(Point r: cp) { 

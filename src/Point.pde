@@ -6,6 +6,7 @@ class Point {
    
    // dist from the source
    float dist; 
+   float score;
    Point prev;
     
    public Point( float x, float y ){

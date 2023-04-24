@@ -51,4 +51,44 @@ class Polygon {
    }
    
    boolean isClosed(){ return p.size()>=3; }   
+   
+   boolean collisionTest(Polygon o) 
+   {
+     
+       float minx = o.p.get(0).x(); 
+       float maxx = o.p.get(0).x(); 
+       float miny = o.p.get(0).y(); 
+       float maxy = o.p.get(0).y(); 
+       for(Point p: o.p){
+         if(p.x() < minx)
+           minx = p.x();
+         if(p.x() > maxx)
+           maxx = p.x();
+         if(p.y() < miny)
+           miny = p.y();
+         if(p.y() > maxy)
+           maxy = p.y();
+       }
+       
+       AABB aabbo = new AABB(minx, maxx, miny, maxy);
+       
+       minx = this.p.get(0).x(); 
+       maxx = this.p.get(0).x(); 
+       miny = this.p.get(0).y(); 
+       maxy = this.p.get(0).y(); 
+       for(Point p: this.p){
+         if(p.x() < minx)
+           minx = p.x();
+         if(p.x() > maxx)
+           maxx = p.x();
+         if(p.y() < miny)
+           miny = p.y();
+         if(p.y() > maxy)
+           maxy = p.y();
+       }
+       
+       AABB aabbt = new AABB(minx, maxx, miny, maxy); 
+        
+       return aabbt.intersectionTest(aabbo);
+   }
 }

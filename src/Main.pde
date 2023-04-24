@@ -3,16 +3,18 @@ import java.util.*;
 
 
 VisibilityGraph g;
-Point s;
 Point e;
 ArrayList<Polygon> o; 
+Polygon robot;
+Point s;
 
 void init() 
 {
   s = makeRandomPoint();
+  robot = makeRobot(s);
   e = makeRandomPoint();
   o = makeRandomBoxes(4);
-  g = new VisibilityGraph(s, e, o);
+  g = new VisibilityGraph(robot, e, o);
 }
 
 void setup(){
@@ -30,6 +32,8 @@ void draw(){
 
 void keyPressed(){
    if(key=='g') init();
+   if(key=='t') test();
+   if(key=='s') {g.solveall();}
 }
 
 Point sel = null;
@@ -52,7 +56,7 @@ void mouseDragged(){
   if( sel != null ){
     sel.p.x = mouseXRHC;   
     sel.p.y = mouseYRHC;
-    g = new VisibilityGraph(s, e, o);
+    g = new VisibilityGraph(makeRobot(s), e, o);
   }
 }
 
