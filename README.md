@@ -64,9 +64,7 @@ Note that, this performance boost does come with a cost of not yielding optimal 
 
 All data is generate with 50 iteration. 
 
-Performance table. 
-|------ | Time  (MS) |
-|------ | --- | ----| -- | 
+Performance table. Note: time is in (ms). 
 |Objects|	bfs |	manh|	euc|
 |------ |---- | ----| ---|
 |10	    | 31	| 0	  | 0  |
@@ -76,9 +74,7 @@ Performance table.
 
 ![performance](./meta/Performance.svg)
 
-Accuracy Table. Note: Lowoer score the better.
-| ----- | Score |
-| ----- | --------|---------|------- |
+Accuracy Table. Note: Lower score the better.
 |Objects| bfs	    | manh    | euc    |
 |------ |-------  | ------- | ------ |
 |10     |	14139.4	| 14231.5	| 14143.2|
