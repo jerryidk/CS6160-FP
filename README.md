@@ -50,6 +50,8 @@ I am not going to dive into details of how those works. However, it is worth not
 to generate optimal solution (shortest distance) while Astar uses heuristics to greedily choose path (thus 
 it doesn't gurantee optimal solution).  
 
+![showcase](./meta/Showcase.png)
+
 --- 
 ## Benchmark/Result
 
@@ -57,7 +59,7 @@ it doesn't gurantee optimal solution).
 
 In this project, I implemented a suboptimal BFS, which is $O(n^2)$. In theory, this can be as low as
 $O(nlog(n))$ through usage of a priority queue. As for the Astar algorithm, those algorithm run-time can
-vary. In the worst case, they should run O(n^2). However, in practice, they should have linear behavior.
+vary. In the worst case, they should run $O(n^2)$. However, in practice, they should have linear behavior.
 Note that, this performance boost does come with a cost of not yielding optimal solution. 
 
 ### data
@@ -85,6 +87,11 @@ Accuracy Table. Note: Lower score the better.
 
 ![accuracy](./meta/Accuracy.svg)
 
+### discussion
+
+Surprisingly, by not yielding optimal path, we can improve performance drastically. 
+However, Astar algorithm should be used with caution as it could produce results that is 
+much more suboptimal. 
 
 --- 
 Author: Jerry Zhang
